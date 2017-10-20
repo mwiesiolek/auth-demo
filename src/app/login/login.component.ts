@@ -8,19 +8,19 @@ import { Router } from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  invalidLogin: boolean; 
+  invalidLogin: boolean;
 
   constructor(
-    private router: Router, 
+    private router: Router,
     private authService: AuthService) { }
 
   signIn(credentials) {
     this.authService.login(credentials)
-      .subscribe(result => { 
+      .subscribe(result => {
         if (result)
           this.router.navigate(['/']);
-        else  
-          this.invalidLogin = true; 
+        else
+          this.invalidLogin = true;
       });
   }
 }
